@@ -36,10 +36,6 @@ archives:
       - goos: windows
         format: zip
 
-upx:
-  - enabled: true
-    compress: best
-
 nfpms:
   - package_name: rpn
     homepage: https://github.com/marcopaganini/rpn
@@ -69,17 +65,3 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
-
-brews:
-  - name: rpn
-    repository:
-      owner: marcopaganini
-      name: homebrew-tap
-      branch: master
-      token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-    directory: Formula
-    homepage: https://github.com/marcopaganini/rpn
-    description: A Linux CLI RPN calculator
-    license: "MIT"
-    install: |
-      bin.install "rpn"
